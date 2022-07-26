@@ -8,4 +8,4 @@
 
 🎨 <b>Projeto no Figma:</b> https://bit.ly/3b86ewr
 
-<a href="https://r.staart.com/7ec343c6c3"> <img src="https://cdn.discordapp.com/attachments/929069726372597815/1001289053934731354/logo_2.png" width="200px"></a>
+<a href="https://r.staart.com/7ec343c6c3" target="_blank"> <img src="https://cdn.discordapp.com/attachments/929069726372597815/1001289053934731354/logo_2.png" width="200px"></a>
