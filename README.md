@@ -2,7 +2,7 @@
 
 <h3> Bootcamp 1ª edição do quick staart</h3>
 
-<b> Visualização do meu projeto: </b> https://arawns1.github.io/Quick-Staart/
+👨‍💻<b> Visualização do meu projeto: </b> https://arawns1.github.io/Quick-Staart/
 
 🖥 <b>Página principal do bootcamp: </b> https://r.staart.com/7ec343c6c3
 
