@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Start</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+<!-- Container da Esquerda-->
+    <div class="container">
+      <h1>&#x26A1 Flash</h1>
+      <h2>Aprenda de forma rápida simples e divertida o vocabulário técnico</h2>
+      <p> No cartão você encontrará palavras e expressões que irá utilizar no seu dia a
+        dia como dev. Aproveite para testar seus conhecimentos e fixar o significado.</p>
+        <button> Próxima pergunta</button>
+        <button id="botão-respota" onclick="MostrarResposta()"> Revelar resposta</button>
+    </div>
+<!-- Fim container da esquerda-->
+
+<!-- Container direita -->
+      <div class="card">
+        <div class="card-pergunta">
+          <h2> O que é HTML?</h2>
+        </div>
+        <div class="card-resposta" id="resposta">
+          <p>A Linguagem de Marcação de Hipertexto (HTML) é uma linguagem de computador que compõe a maior parte das páginas da internet e dos aplicativos online</p>
+        </div>
+      </div>
+<!-- Fim container direita -->
+  </body>
+  <script>
+
+    var i = 0; 
+    var card = document.getElementById("resposta")
+function MostrarResposta(){
+  i++
+  card.style.filter = "blur(0)";
+  
+  console.log("clicou");
+  console.log(i);
+  }
+
+</script>
+</html>
