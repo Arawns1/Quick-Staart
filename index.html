@@ -21,7 +21,7 @@
       <p> No cartão você encontrará palavras e expressões que irá utilizar no seu dia a
         dia como dev. Aproveite para testar seus conhecimentos e fixar o significado.</p>
         <button> Próxima pergunta</button>
-        <button id="botão-respota" onclick="MostrarResposta()"> Revelar resposta</button>
+        <button id="botão-respota" onclick="MostrarResposta()"> <span id="texto-resposta"> Revelar resposta </span> </button>
     </div>
 <!-- Fim container da esquerda-->
 
@@ -42,10 +42,16 @@
     var card = document.getElementById("resposta")
 function MostrarResposta(){
   i++
-  card.style.filter = "blur(0)";
+  card.style.filter = "blur(0px)";
+  document.getElementById("texto-resposta").textContent="Esconder Resposta";
+    console.log(i);
+    if (i == 2){
+      document.getElementById("texto-resposta").textContent="Revelar Resposta";
+      card.style.filter = "blur(3px)";
+      i = 0;
+    } 
+    console.log("clicou");
   
-  console.log("clicou");
-  console.log(i);
   }
 
 </script>
