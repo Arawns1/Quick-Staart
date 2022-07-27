@@ -47,34 +47,38 @@ body{
 }
 
 
+
 .card {
   background-color: var(--white);
-  border-style: solid;
-  width: 80%;
-  height: 28.25rem;
-  border-radius: 0.875rem 0.875rem 0rem 0rem;
+  max-width: 60rem;
+  overflow: hidden;
 }
 
 .card-pergunta{
-  height: 55%;
-  font-weight: 700;
+  height: 25rem;
   color: var(--white);
   background-color: var(--purple);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.625rem 0.625rem 0rem 0rem;
   
+}
+.card-titulo{
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 .card-resposta {
   color: var(--black);
-  padding: 2.0rem 1.5rem 2.5rem 1.5rem;
+  padding: 3rem 1.5rem;
   font-weight: 500;
+  min-height: 14rem ;
+}
+.card, 
+.botao{
+  border-radius: 0.5rem;
 }
 
 #resposta {
   filter: blur(3px);
 }
+
 .botoes{
   display: flex;
   justify-content: space-between;
@@ -87,5 +91,5 @@ body{
   height: 6rem;
   font-size: 1.6rem;
   font-weight: 700;
-  border-radius: 0.8rem;
+ 
 }
