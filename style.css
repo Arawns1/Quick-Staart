@@ -48,27 +48,27 @@ body{
 
 
 .card {
+  background-color: var(--white);
   border-style: solid;
-  border-radius: 5px;
-  width: 80%
+  width: 80%;
+  height: 28.25rem;
+  border-radius: 0.875rem 0.875rem 0rem 0rem;
 }
 
 .card-pergunta{
+  height: 55%;
   font-weight: 700;
-  background-color: var(--purple);
   color: var(--white);
-  height: 25rem;
+  background-color: var(--purple);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 0.625rem 0.625rem 0rem 0rem;
   
 }
 .card-resposta {
-  background-color: var(--white);
   color: var(--black);
-  height: 10rem;
-  padding: 3rem 1rem 2rem 1rem;
+  padding: 2.0rem 1.5rem 2.5rem 1.5rem;
   font-weight: 500;
 }
 
