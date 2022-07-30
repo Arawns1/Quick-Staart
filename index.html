@@ -46,12 +46,16 @@
     function mostrarResposta(){
     var card = document.querySelector("#resposta");
     card.classList.toggle("blur")
+    document.getElementById("texto-resposta").textContent="Esconder Resposta";
+    if (i == 2){
+      document.getElementById("texto-resposta").textContent="Revelar Resposta";
+      i = 0
+    }
     }
 
    function proxPergunta(proxPergunta){
     var pergunta = document.querySelector("#cardContainer");
     pergunta.innerHTML="";
-
     var cardDiv = document.createElement("div");
     cardDiv.classList.add("card", "animate__animated","animate__backInRight");
     cardDiv.innerHTML = `
