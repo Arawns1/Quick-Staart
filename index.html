@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   </head>
   <body>
     <div class="container-principal">
@@ -22,35 +26,57 @@
               <p class="principal-descricao"> No cartão você encontrará palavras e expressões que irá utilizar no seu dia a
                 dia como dev. Aproveite para testar seus conhecimentos e fixar o significado.</p>
                 <div class="botoes">
-                  <button class="botao"> Próxima pergunta</button>
+                  <button onclick="buscarInformacao()" class="botao"> Próxima pergunta</button>
                   
                   <button 
-                  class= "botao" id="botão-resposta" onclick="MostrarResposta()"> <span id="texto-resposta"> Revelar resposta </span> </button>
+                  class= "botao" id="botão-resposta" onclick="mostrarResposta()"> <span id="texto-resposta"> Revelar resposta </span> </button>
                 </div>
             </div>
           </div>
       <!-- Fim container da esquerda-->
       
       <!-- Container direita -->
-            <div class="container centralizar">
-              <div class="card">
-                <div class="card-pergunta centralizar">
-                  <h2 class="card-titulo"> O que é HTML?</h2>
-                </div>
-                <div class="card-resposta blur" id="resposta">
-                  <p>A Linguagem de Marcação de Hipertexto (HTML) é uma linguagem de computador que compõe a maior parte das páginas da internet e dos aplicativos online</p>
-                  
-                </div>
-              </div>
+            <div id="cardContainer" class="container centralizar" >
             </div>
       <!-- Fim container direita -->
     </div>
   </body>
   <script>
 
-    var i = 0; 
-    var card = document.getElementById("resposta")
-function MostrarResposta(){
+    function mostrarResposta(){
+    var card = document.querySelector("#resposta");
+    card.classList.toggle("blur")
+    }
+
+   function proxPergunta(proxPergunta){
+    var pergunta = document.querySelector("#cardContainer");
+    pergunta.innerHTML="";
+
+    var cardDiv = document.createElement("div");
+    cardDiv.classList.add("card", "animate__animated","animate__backInRight");
+    cardDiv.innerHTML = `
+            <div class="card-pergunta centralizar">
+                  <h2 class="card-titulo"> ${proxPergunta.title}</h2>
+            </div>
+             <div class="card-resposta blur" id="resposta">
+                  <p>${proxPergunta.description}</p>
+                  
+              </div> `;
+      pergunta.appendChild(cardDiv);
+   }
+   function buscarInformacao(){
+    fetch("https://flash.quickstaart.com/random")
+    .then(function(resultado){
+      return resultado.json()
+    })
+    .then(function (resultadoJSON){
+      proxPergunta(resultadoJSON)
+    })
+    
+   }
+window.addEventListener("load", buscarInformacao())
+    
+/*function mostrarResposta(){
   i++
   card.style.filter = "blur(0px)";
   document.getElementById("texto-resposta").textContent="Esconder Resposta";
@@ -60,8 +86,7 @@ function MostrarResposta(){
       card.style.filter = "blur(3px)";
       i = 0;
     } 
-  
-  }
+  */
 
 </script>
 </html>

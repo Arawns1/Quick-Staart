@@ -75,7 +75,8 @@ body{
   border-radius: 0.5rem;
 }
 
-#resposta {
+
+.blur {
   filter: blur(3px);
 }
 
