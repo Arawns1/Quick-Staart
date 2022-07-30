@@ -26,10 +26,10 @@
               <p class="principal-descricao"> No cartão você encontrará palavras e expressões que irá utilizar no seu dia a
                 dia como dev. Aproveite para testar seus conhecimentos e fixar o significado.</p>
                 <div class="botoes">
-                  <button onclick="buscarInformacao()" class="botao"> Próxima pergunta</button>
+                  <button onclick="buscarInformacao()"  class="botao"> Próxima pergunta</button>
                   
                   <button 
-                  class= "botao" id="botão-resposta" onclick="mostrarResposta()"> <span id="texto-resposta"> Revelar resposta </span> </button>
+                  class= "botao" id="botão-resposta"  onclick="mostrarResposta()"> <p id="texto-resposta"> Revelar resposta </p> </button>
                 </div>
             </div>
           </div>
@@ -43,28 +43,32 @@
   </body>
   <script>
   var i = 0;
+    
     function mostrarResposta(){
-    i++
-    console.log(i);
     var card = document.querySelector("#resposta");
-    card.classList.toggle("blur")
-    document.getElementById("texto-resposta").textContent="Esconder Resposta";
-    if (i == 2){
-      
-      document.getElementById("texto-resposta").textContent="Revelar Resposta";
-      i = 0;
-    }
+    card.classList.toggle("blur");
+    trocaTexto();
     }
 
+    function trocaTexto(){
+        document.querySelector("#texto-resposta").innerHTML = "Esconder resposta"
+        i++
+      if (i == 2){
+        document.querySelector("#texto-resposta").innerHTML = "Revelar resposta"
+        i = 0;
+      }
+      }
+    
+
    function proxPergunta(proxPergunta){
-    i = 0;
+    document.querySelector("#texto-resposta").innerHTML = "Revelar resposta"
     var pergunta = document.querySelector("#cardContainer");
     pergunta.innerHTML="";
     var cardDiv = document.createElement("div");
     cardDiv.classList.add("card", "animate__animated","animate__backInRight");
     cardDiv.innerHTML = `
             <div class="card-pergunta centralizar">
-                  <h2 class="card-titulo"> ${proxPergunta.title}</h2>
+                  <h2 class="card-titulo"> O que é ${proxPergunta.title}</h2>
             </div>
              <div class="card-resposta blur" id="resposta">
                   <p>${proxPergunta.description}</p>
@@ -79,6 +83,7 @@
     })
     .then(function (resultadoJSON){
       proxPergunta(resultadoJSON)
+      
     })
     
    }
