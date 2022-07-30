@@ -42,12 +42,15 @@
     </div>
   </body>
   <script>
-
+  var i = 0;
     function mostrarResposta(){
+    i++
+    console.log(i);
     var card = document.querySelector("#resposta");
     card.classList.toggle("blur")
     document.getElementById("texto-resposta").textContent="Esconder Resposta";
     if (i == 2){
+      
       document.getElementById("texto-resposta").textContent="Revelar Resposta";
       i = 0
     }
